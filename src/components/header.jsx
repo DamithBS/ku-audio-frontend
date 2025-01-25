@@ -6,7 +6,7 @@ export default function Header(){
 
             <img src="/logo.jpg" className="w-[100px] h-[100px] object-cover absolute left-1 rounded-full border-[3px]" alt="" />
 
-            <Link to={"/home"} className="text-[25px] font-bold m-1">Home</Link>
+            <Link to={"/"} className="text-[25px] font-bold m-1">Home</Link>
             <Link to={"/contact"} className="text-[25px] font-bold m-1">contact</Link>
             <Link to={"/gallery"} className="text-[25px] font-bold m-1">gallery</Link>
             <Link to={"/items"} className="text-[25px] font-bold m-1">Items</Link>
