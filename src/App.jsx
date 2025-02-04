@@ -8,12 +8,15 @@ import { Toaster } from 'react-hot-toast';
 function App() {
   return (
     <BrowserRouter>
-      <Toaster/>
+   
+      <Toaster/>    {/* alert library  */}
+
       <Routes>
         <Route path="/login" element={<LoginPage/>}/>
         <Route path="/admin/*" element={<AdminPage />} />
         <Route path="/*" element={<HomePage />} />
       </Routes>
+      
     </BrowserRouter>
   );
 }

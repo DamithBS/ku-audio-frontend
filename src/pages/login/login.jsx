@@ -23,7 +23,9 @@ export default function LoginPage(){
         ).then((res)=>{
             console.log(res);     
             toast.success("Login Success.")
-            const user = res.data.user
+            const user = res.data.user  // user data give from databse
+            localStorage.setItem("token",res.data.token)
+            
             if(user.role ==="admin"){
                 // window.location.href="/admin"
                 navigate("/admin/")
