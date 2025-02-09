@@ -2,6 +2,7 @@ import { FaHome, FaRegUser } from "react-icons/fa";
 import { Link, Route, Routes } from "react-router-dom";
 import AdminItemPage from "./adminItemsPage";
 import AddItemsPage from "./addItemPage";
+import UpdateItemsPage from "./updateItemPage";
 
 
 
@@ -23,7 +24,7 @@ export default function AdminPage(){
                     <Route path="/bookings" element={<h1>Booking</h1>} />
                     <Route path="/items" element={<AdminItemPage/>} />  
                     <Route path="/items/add" element={<AddItemsPage/>}/>                
-
+                    <Route path="/items/edit" element={<UpdateItemsPage/>}/>
                 </Routes>
 
             </div>
