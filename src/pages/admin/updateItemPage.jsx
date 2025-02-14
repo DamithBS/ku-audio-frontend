@@ -22,10 +22,11 @@ async function handelUpdateItems(){
     console.log(productKey,productName,productPrice,productCategory,productDimensions,productDescription);
     
     const token = localStorage.getItem("token")
+    const backendurl = import.meta.env.VITE_BACKEND_URL
     // update details from database in put requset
     if(token){
         try{ 
-            const result = await axios.put("http://localhost:3000/api/products/"+productKey,{
+            const result = await axios.put(`${backendurl}/api/products/${productKey}`,{
                key:productKey,
                name:productName,
                price:productPrice,
