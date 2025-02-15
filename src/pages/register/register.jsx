@@ -16,7 +16,7 @@ export default function RegisterPage() {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    // Add your registration logic here
+    // registration logic here
     console.log({ email, password, firstName, lastName, address, phone });
 
     axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/users/`,{

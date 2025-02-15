@@ -48,7 +48,7 @@ export default function AdminItemPage() {
         })
         .catch((err) => {
           console.log(err);
-          // You may want to restore the item if deletion fails
+          // restore the item if deletion fails
         });
     }
   };

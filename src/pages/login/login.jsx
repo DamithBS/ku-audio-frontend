@@ -38,7 +38,7 @@ export default function LoginPage(){
 
         }).catch((err)=>{
             console.log(err);
-            toast.error(err.response.data.error)
+            toast.error(err?.response?.data?.error||"An error occured")
         })
         
     }
@@ -54,8 +54,7 @@ export default function LoginPage(){
                         value={email}
                         onChange={
                             (e)=>{
-                                setEmail(e.target.value)
-                                
+                                setEmail(e.target.value)                                
                             }
                         }
                     />

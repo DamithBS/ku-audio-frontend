@@ -5,7 +5,7 @@ import ProductCart from "../../components/productCart";
 
 export default function Items(){
 
-    const [state,setState]= useState("loading")//loading success error
+    const [state,setState]= useState("loading")//loading,success ,error
     const [item,setItems] = useState();
 
     useEffect(()=>{
