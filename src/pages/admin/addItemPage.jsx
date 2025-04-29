@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import mediaUpload from "../../utils/mediaUpload";
 
 export default function AddItemsPage() {
   const [productKey, setProductKey] = useState("");
@@ -10,24 +11,47 @@ export default function AddItemsPage() {
   const [productCategory, setProductCategory] = useState("audio");
   const [productDimensions, setProductDimensions] = useState("");
   const [productDescription, setProductDescription] = useState("");
+  const [productImage, setProductImage] = useState([]);
 
   const navigate = useNavigate();
 
 async function handelAddItems(){
+    
+    const promises= []
+    for(let i=0;i<productImage.length;i++){
+      console.log(productImage[i]);
+      const promise = mediaUpload(productImage[i])
+      promises.push(promise)
+      
+    }
+ 
+
     console.log(productKey,productName,productPrice,productCategory,productDimensions,productDescription);
+
     
     const token = localStorage.getItem("token")
     const backendurl = import.meta.env.VITE_BACKEND_URL
 
     if(token){
         try{
+
+             // Promise.all(promises).then((result)=>{
+            //   console.log(result);
+            // })
+            // .catch((err)=>{
+            //   console.log(err);
+            // })
+
+            const imageUrl = await Promise.all(promises)
+
             const result = await axios.post(`${backendurl}/api/products`,{
                key:productKey,
                name:productName,
                price:productPrice,
                category:productCategory,
                dimensions:productDimensions,
-               description:productDescription
+               description:productDescription,
+               image:imageUrl,
            },{
                headers:{
                    Authorization:"Bearer "+ token
@@ -98,6 +122,8 @@ async function handelAddItems(){
           placeholder="Product Description"
           className="w-full border p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
+        <input type="file" multiple onChange={(e) => setProductImage(e.target.files)} className="w-full border p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" />
+
         <button
           type="submit" onClick={handelAddItems}
           className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition-colors">
