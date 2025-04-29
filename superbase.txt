@@ -1,0 +1,6 @@
+anonpublic = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im56aGtpdGVlZmVkYWRybmRpanRyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU1NTk4MDYsImV4cCI6MjA2MTEzNTgwNn0.gRnA40aQ9YaRTRagrP6mNJEhNKvh8A724WbRHSJJgJg
+
+
+https://nzhkiteefedadrndijtr.supabase.co
+
+@supabase/supabase-js
