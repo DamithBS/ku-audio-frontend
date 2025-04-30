@@ -1,5 +1,7 @@
 import React from "react";
 import "./productCart.css";
+import { Link } from "react-router-dom";
+
 
 export default function ProductCart({ item }) {
   return (
@@ -27,7 +29,7 @@ export default function ProductCart({ item }) {
           </div>
         </div>
         <div className="mt-4 mx-auto">
-          <button
+          {/* <button
             disabled={!item.availability}
             className={`w-full py-2 rounded transition-colors text-white ${
               item.availability
@@ -36,7 +38,10 @@ export default function ProductCart({ item }) {
             }`}
           >
             Add to Cart
-          </button>
+          </button> */}
+          
+            <Link to={"/product/"+item.key} className="text-center w-full py-1 m-2 rounded transition-colors text-white bg-blue-500 hover:bg-blue-600">
+                View Details</Link>
         </div>
       </div>
     </div>
